@@ -1,0 +1,36 @@
+#wrapper{
+
+	background-color: white;
+	width:970px;
+}
+
+.left{
+
+	display: inline-block;
+	width:325px;
+	float: left;
+	border-radius: 25px;
+}
+
+.right
+{
+	display: inline-block;
+	width: 300px;
+	float: right;
+	border-radius: 25px;
+}
+
+.textarea{
+
+	display: inline-block;
+	width: 395px;
+	margin-left: 249px;
+}
+
+fieldset{
+	border-radius: 25px;
+}
+
+.bold{
+	font-weight: bold;
+}

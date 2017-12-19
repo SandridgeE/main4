@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}" />
+</head>
+<body>
+	<div id="wrapper">
+	{% if messages %}
+	<ul>
+	{% for message in messages %}
+	<li>{{message}}</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+<h1>Sign Up!</h1><div class="left">
+<form action="/register"  method="POST">
+	<fieldset>
+	{% csrf_token %}
+	<label>First Name:</label>
+	<input type="text" name="first_name"><p></p>
+	<label>Last Name:</label>
+	<input type="text" name="last_name"><p></p>
+	<label>Address:</label>
+	<input type="text" name="address"><p></p>
+	<label>Credit Card:</label>
+	<input type="text" name="credit_card"><p></p>
+	<label>Email:</label>
+	<input type="email" name="email"><p></p>
+	<label>Password:</label>
+	<input type="password" name="password"><p></p>
+	<label>Password Confirmation:</label>
+	<input type="password" name="password_confirmation"><p></p>
+	
+	<input type="submit" value="OK!">
+	</fieldset>
+</form>
+</div>
+<div class = "textarea">
+Water connects every aspect of life. Access to safe water and sanitation can quickly turn problems into potential - unlocking education, work opportunities, and improved health for women, children and families across the world. <p></p>
+Today, <span class="bold">1 in 19</span> people lack access to safe water;<span class="bold"> 1 in 3 </span> people lack access to a toilet. More people have a mobile phone than a toilet. We can change this. Let's work together to make the power of water available to all.
+</div>
+<div class="right">
+<h1>Login</h1>
+
+<form action="{% url 'login' %}" method="post">
+	<fieldset>
+		{% csrf_token %}
+	<label>Email</label>
+	<input type="email" name="email"><p></p>
+	<label>Password</label>
+	<input type="password" name="password"><p></p>
+	<input type="submit" value="OK!">
+</fieldset>
+</form>
+</div>
+</div>
+</body>
+</html>
